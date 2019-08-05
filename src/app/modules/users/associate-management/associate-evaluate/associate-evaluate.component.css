@@ -1,0 +1,26 @@
+
+  tbody {
+    display:block;
+    max-height:500px;
+    overflow-y:auto;
+  }
+  thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+  }
+  .padd-bottom-20{
+    padding-bottom: 20px;
+  }
+
+  ul.table-structure {
+    list-style: none;
+    float: left;
+}
+  .col-head li {
+    color: red;
+    list-style: none;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+}

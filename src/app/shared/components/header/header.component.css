@@ -1,0 +1,59 @@
+   
+    header{
+        /* padding: 0 20px; */
+        border-bottom: 4px solid #049ad2;
+        box-shadow: 0px 4px 7px #ccc;
+        position: fixed;
+        width: calc(100% - 260px);
+        z-index: 2;
+        background: #fff;
+        /* background-image: url(../../../../assets/images/header-back.png); */
+        /* background-color: #d7eef6; */
+    }
+    .logo{display: inline-block;}
+    .logo > * > img{
+        width: 131px;
+    }
+    .profilePic{
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 5px;
+    }
+    .profilePic > img{
+        width: 40px;
+        border-radius: 50%;
+    }
+    li.nav-item {
+        padding: 0 11px;
+        align-items: center;
+        vertical-align: middle;
+        display: flex;
+        margin: 0 5px;
+        color: #049ad2;
+    }
+    
+    li.nav-item:hover{
+        border-bottom: 2px solid #07506b;
+        cursor: pointer;
+    }
+    li.nav-item.profile{
+        border: 0px;
+    }
+    .user-profile{
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    .btn.btn-fab .fa, .btn.btn-fab .material-icons, .btn.btn-just-icon .fa, .btn.btn-just-icon .material-icons, .mat-button.btn.btn-fab .fa, .mat-button.btn.btn-fab .material-icons, .mat-button.btn.btn-just-icon .fa, .mat-button.btn.btn-just-icon .material-icons, .mat-raised-button.btn.btn-fab .fa, .mat-raised-button.btn.btn-fab .material-icons, .mat-raised-button.btn.btn-just-icon .fa, .mat-raised-button.btn.btn-just-icon .material-icons, .mat-raised-button.btn:not([class*=mat-elevation-z]).btn-fab .fa, .mat-raised-button.btn:not([class*=mat-elevation-z]).btn-fab .material-icons, .mat-raised-button.btn:not([class*=mat-elevation-z]).btn-just-icon .fa, .mat-raised-button.btn:not([class*=mat-elevation-z]).btn-just-icon .material-icons {
+        margin-top: 0;
+        position: absolute;
+        width: 100%;
+        -webkit-transform: none;
+        transform: none;
+        left: 0;
+        top: 0;
+        height: 100%;
+        line-height: 41px;
+        font-size: 20px;
+    }

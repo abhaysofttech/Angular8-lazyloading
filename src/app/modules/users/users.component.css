@@ -1,0 +1,19 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    width: 260px;
+    background: #fff;
+    color: #fff;
+    background-color: #e53935;
+    box-shadow: 0 16px 38px -12px rgba(0,0,0,.56), 0 4px 25px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+}
+.main-panel {
+    position: relative;
+    float: right;
+    width: calc(100% - 260px);
+    transition: .33s,cubic-bezier(.685,.0473,.346,1);
+
+}

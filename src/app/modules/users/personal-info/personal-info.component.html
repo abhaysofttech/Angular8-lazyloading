@@ -1,0 +1,42 @@
+<!-- <div class="container result-container"> -->
+<div class="row no-margin justify-content-md-center">
+    <div class="col-12 result-container">
+
+        <div class="card">
+            <div class="card-header">
+                UPDATE PERSONAL INFO
+            </div>
+            <div class="container padd-even-30">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="'/user/personal/details'">Profile Update</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="'/user/personal/technical'">Technical Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  routerLinkActive="active" [routerLink]="'/user/personal/certificate'">Certificate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  routerLinkActive="active" [routerLink]="'/user/personal/accolades'">Accolades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  routerLinkActive="active" [routerLink]="'/user/personal/domain'">Domain knowledge</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  routerLinkActive="active" [routerLink]="'/user/personal/travel'">Visa & Travel</a>
+                    </li>
+                </ul>
+                <div class="card">
+
+                    <div class="card-body">
+                        <form>
+                            <router-outlet></router-outlet>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
