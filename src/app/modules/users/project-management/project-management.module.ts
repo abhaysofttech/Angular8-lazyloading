@@ -5,13 +5,17 @@ import { ProjectManagementRoutingModule } from './project-management-routing.mod
 import { CommonModule } from '@angular/common';
 import { BaselineConfigComponent } from './baseline-config/baseline-config.component';
 import { ProjectConfigComponent } from './project-config/project-config.component';
+import { PendingApprovalsComponent } from './pending-approvals/pending-approvals.component';
+import { NewTrackComponent } from './new-track/new-track.component';
 
 @NgModule({
     declarations:[
         ProjectManagementComponent,
 
         BaselineConfigComponent,
-        ProjectConfigComponent
+        ProjectConfigComponent,
+        PendingApprovalsComponent,
+        NewTrackComponent
     ],
     imports:[
         ProjectManagementRoutingModule,CommonModule

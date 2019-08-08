@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {AgGridModule} from 'ag-grid-angular';
 import { AssociateManagementroutingModule } from './associate-management-routing.module';
 
 import { AssociateManagementComponent } from './associate-management.component';
@@ -8,6 +9,7 @@ import { ImprovementPlanComponent } from './improvement-plan/improvement-plan.co
 import { TrainingStatusComponent } from './training-status/training-status.component';
 import { TrackMappingComponent } from './track-mapping/track-mapping.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -20,7 +22,10 @@ import { CommonModule } from '@angular/common';
         TrainingStatusComponent
     ],
     imports: [
-        AssociateManagementroutingModule, CommonModule
+        AssociateManagementroutingModule, 
+        CommonModule, 
+        FormsModule,
+        AgGridModule.withComponents([AssociateManagementComponent])
     ],
     exports: [],
 })

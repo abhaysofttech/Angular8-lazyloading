@@ -17,13 +17,31 @@ import { RwfComponent } from './rwf/rwf.component';
 import { DemandForecastingComponent } from './rwf/demand-forecasting/demand-forecasting.component';
 import { RwfManagementComponent } from './rwf/rwf-management/rwf-management.component';
 import { RwfTransactionComponent } from './rwf/rwf-transaction/rwf-transaction.component';
+import { SpanControlComponent } from './dashboard/span-control/span-control.component';
+import { ReporteesComponent } from './dashboard/reportees/reportees.component';
+import { KnowledgeDrainComponent } from './dashboard/knowledge-drain/knowledge-drain.component';
+import { VisaStatusComponent } from './dashboard/visa-status/visa-status.component';
+import { SkillMappingComponent } from './dashboard/skill-mapping/skill-mapping.component';
+import { NicheSkillsComponent } from './dashboard/niche-skills/niche-skills.component';
+import { SkillMappingBuComponent } from './dashboard/skill-mapping-bu/skill-mapping-bu.component';
+import { SkillMappingMyteamComponent } from './dashboard/skill-mapping-myteam/skill-mapping-myteam.component';
+import { LogDetailsComponent } from './dashboard/log-details/log-details.component';
 
 
 @NgModule({
     declarations: [
         SidebarCmpComponent,
         HeaderComponent,
-        UsersComponent
+        UsersComponent,
+        SpanControlComponent,
+        ReporteesComponent,
+        KnowledgeDrainComponent,
+        VisaStatusComponent,
+        SkillMappingComponent,
+        NicheSkillsComponent,
+        SkillMappingBuComponent,
+        SkillMappingMyteamComponent,
+        LogDetailsComponent
     ],
     imports: [
         CommonModule,

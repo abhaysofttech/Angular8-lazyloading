@@ -357,3 +357,29 @@ input[type="checkbox"]:checked + label:before {
 }
 
 /*  ************************** End css for checkbox ************************ */
+.dropdown-menu.show, .open>.dropdown-menu {
+    display: block;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.dropdown-menu {
+    display: none;
+    padding: .3125rem 0;
+    border: 0;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    will-change: transform,opacity;
+    transition: opacity .2s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1);
+    transition: transform .3s cubic-bezier(.4,0,.2,1),opacity .2s cubic-bezier(.4,0,.2,1);
+    transition: transform .3s cubic-bezier(.4,0,.2,1),opacity .2s cubic-bezier(.4,0,.2,1),-webkit-transform .3s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+
+.ag-theme-balham .sick-days-breach {
+    background-color: lightcoral !important;
+}

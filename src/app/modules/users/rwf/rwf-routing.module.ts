@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { RwfManagementComponent } from './rwf-management/rwf-management.component';
 import { DemandForecastingComponent } from './demand-forecasting/demand-forecasting.component';
 import { RwfComponent } from './rwf.component';
+import { RwfTransactionComponent } from './rwf-transaction/rwf-transaction.component';
+import { DemandAssignmentComponent } from './demand-assignment/demand-assignment.component';
+import { RwfDashboardComponent } from './rwf-dashboard/rwf-dashboard.component';
 
 const RwfRoutes: Routes = [
     {
@@ -10,7 +13,10 @@ const RwfRoutes: Routes = [
         component: RwfComponent,
         children: [
             { path: 'demand', component: DemandForecastingComponent },
-            { path: 'rwf-management', component: RwfManagementComponent }
+            { path: 'rwf-management', component: RwfManagementComponent },
+            { path: 'transaction', component: RwfTransactionComponent },
+            { path: 'assignment', component: DemandAssignmentComponent },
+            { path: 'dashboard', component: RwfDashboardComponent }
         ]
 
     }
@@ -18,7 +24,7 @@ const RwfRoutes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forChild(RwfRoutes)],
-    exports:[RouterModule]
+    exports: [RouterModule]
 
 })
 export class RwfRoutingModule { }

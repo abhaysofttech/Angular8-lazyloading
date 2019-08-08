@@ -4,6 +4,8 @@ import { ProjectManagementComponent } from './project-management.component';
 
 import { ProjectConfigComponent } from './project-config/project-config.component';
 import { BaselineConfigComponent } from './baseline-config/baseline-config.component';
+import { PendingApprovalsComponent } from './pending-approvals/pending-approvals.component';
+import { NewTrackComponent } from './new-track/new-track.component';
 
 
 
@@ -13,7 +15,9 @@ const ProjectManagementRoutes: Routes = [
         component: ProjectManagementComponent,
         children: [
             { path: 'config', component: ProjectConfigComponent },
-            { path: 'baseline', component: BaselineConfigComponent }
+            { path: 'baseline', component: BaselineConfigComponent },
+            { path: 'pending-approval', component: PendingApprovalsComponent },
+            { path: 'new-track', component: NewTrackComponent }
         ]
     }
 ]
