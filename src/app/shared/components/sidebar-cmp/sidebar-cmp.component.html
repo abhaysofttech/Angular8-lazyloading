@@ -29,20 +29,27 @@
     <div class="nav-container">
         <ul class="nav">
             <li class="nav-item" *ngFor="let menuItem of menuItems">
-                <a class="nav-link" data-toggle="collapse" href="#{{menuItem.id}}">
+                <a class="nav-link" data-toggle="collapse" href="#{{menuItem.id}}"  *ngIf="menuItem.state=='active'">
                     <!-- <i class="fa fa-calendar"></i> -->
                     <i class="material-icons">{{menuItem.icon}}</i>
-                    <p class="no-margin">{{menuItem.title}}
+                    <p class="no-margin menuName">{{menuItem.title}}
                         <b class="caret" *ngIf="menuItem.submenu"></b>
                     </p>
                 </a>
+                <a class="nav-link inactiveMenu"  *ngIf="menuItem.state=='inactive'">
+                        <!-- <i class="fa fa-calendar"></i> -->
+                        <i class="material-icons">{{menuItem.icon}}</i>
+                        <p class="no-margin menuName">{{menuItem.title}}
+                        </p>
+                    </a>
                 <div class="collapse" id="{{menuItem.id}}">
                     
                         <ul class="nav">
                                 <li class="sub-nav-item no-padding no-margin" *ngFor="let submenuItem of menuItem.submenu" >
-                                    <a class="nav-link" routerLinkActive="active" routerLink="{{submenuItem.path}}" (click)="setBreadcrumb(submenuItem.title)"> 
+                                    <a class="nav-link" routerLinkActive="active" routerLink="{{submenuItem.path}}" (click)="setBreadcrumb(submenuItem.title)" 
+                                    [ngClass]="{'inactiveMenu':submenuItem.state}"> 
                                             <i class="material-icons">{{submenuItem.icon}}</i>
-                                            <p class="no-margin">{{submenuItem.title}}
+                                            <p class="no-margin menuName">{{submenuItem.title}}
                                                 <!-- <b class="caret"></b> -->
                                             </p>
                                     </a>

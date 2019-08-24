@@ -1,0 +1,132 @@
+<div class="row no-margin justify-content-md-center">
+    <div class="col-12 result-container">
+            <div class="form-group">
+                    <div class="col-md-6" >
+                      <input type="text" [(ngModel)]="searchText" 
+                             class="form-control" placeholder="Search By Category" />
+                    </div>
+                  </div>
+        <div class="card" style="overflow: auto;">
+            <div class="row no-margin tableGridHeader">
+                <div class="col-121 zen-row-header ">
+                    <div class="zen-cell" style="width: 100px; left: 0;"  (click)="sort('demand_id')">demand_id</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">opportunity_id</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">opportunity_desc</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">client_manager</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">customer_dept</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">assigned_to</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">created_by</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">created_on</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">offshore_delivery_CH</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">eng_manager</div>
+                    <!-- <div class="zen-cell" style="width: 100px; left: 0;">onsite_delivery_head</div> -->
+                    <div class="zen-cell" style="width: 100px; left: 0;">delivery_head</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">delivery_head</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">delivery_head</div>
+                    <div class="zen-cell" style="width: 100px; left: 0;">delivery_head</div>
+                </div>
+            </div>
+            <ng-container>
+                <div class="tableGridBody">
+                <div class="row no-margin" *ngFor="let data of rowData | filter :  {demand_id: searchText, opportunity_id:searchText,  opportunity_desc: searchText};let i=index ">
+                    <div class="col-12 zen-row firstLevel">
+                        <div class="zen-cell" style="width: 100px; left: 0;">
+                            <i class="more-less glyphicon glyphicon-plus fa"
+                                [ngClass]="{'fa-plus': data.children, 'fa-minus': data.active }" style="color:#8e8e8e"
+                                (click)="showMinorData(i)"></i>
+                            {{data.demand_id}}
+                        </div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.opportunity_id}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.opportunity_desc}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.client_manager}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.customer_dept}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.assigned_to}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.created_by}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.created_on}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.offshore_delivery_CH}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.eng_manager}}</div>
+                        <!-- <div class="zen-cell" style="width: 100px; left: 0;">{{data.onsite_delivery_head}}</div> -->
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.delivery_head}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.delivery_head}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.delivery_head}}</div>
+                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.delivery_head}}</div>
+                    </div>
+                    <ng-container *ngIf="data.active">
+                        <div class="row no-margin" *ngFor="let subData of data.children ;let j=index"
+                            style="background: #ccc">
+                            <div class="col-12 zen-row ">
+                                <div class="zen-cell secondLevel" style="width: 100px; left: 0;">
+                                    <i class="more-less glyphicon glyphicon-plus fa"
+                                        [ngClass]="{'fa-plus': subData.children, 'fa-minus': subData.active }"
+                                        style="color:#8e8e8e" (click)="showSubMinorData(i,j)"></i>
+                                    {{subData.demand_id}}
+                                </div>
+
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.opportunity_id}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.opportunity_desc}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.client_manager}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.customer_dept}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.assigned_to}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.created_by}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.created_on}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.offshore_delivery_CH}}
+                                </div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.eng_manager}}</div>
+                                <!-- <div class="zen-cell" style="width: 100px; left: 0;">{{subData.onsite_delivery_head}}</div> -->
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.delivery_head}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.delivery_head}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.delivery_head}}</div>
+                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.delivery_head}}</div>
+                            </div>
+
+                            <ng-container *ngIf="subData.active">
+                                <div class="row no-margin" *ngFor="let record of subData.children"
+                                    style="background: #dee2e6">
+                                    <div class="col-12 zen-row ">
+                                        <div class="zen-cell thirdLevel" style="width: 100px; left: 0;">
+                                            <i class="more-less glyphicon glyphicon-plus fa"
+                                                [ngClass]="{'fa-plus': record.children, 'fa-minus': record.active }"
+                                                style="color:#8e8e8e"></i>
+                                            {{record.demand_id}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.opportunity_id}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.opportunity_desc}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.client_manager}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.customer_dept}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.assigned_to}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.created_by}}</div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.created_on}}</div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">
+                                            {{record.offshore_delivery_CH}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.eng_manager}}
+                                        </div>
+                                        <!-- <div class="zen-cell" style="width: 100px; left: 0;">{{record.onsite_delivery_head}}</div> -->
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.delivery_head}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.delivery_head}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.delivery_head}}
+                                        </div>
+                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.delivery_head}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </ng-container>
+                        </div>
+
+                    </ng-container>
+
+                </div>
+            </div>
+            </ng-container>
+
+        </div>
+    </div>
+</div>

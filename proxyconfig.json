@@ -1,0 +1,7 @@
+{
+    "/ZenForteWebServices_PreRelease/*":{
+        "target":"https://zenforte.zensar.com",
+        "secure":false,
+        "changeOrigin":true
+    }
+}

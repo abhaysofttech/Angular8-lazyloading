@@ -1,193 +1,215 @@
-[{
-    "staff_no": "1",
-    "staff_name": "Tiger Nixon",
-    "role": "System Architect",
-    "project_name": "$320,800",
-    "track_name": "2011/04/25",
-    "rating_history": "Edinburgh",
-    "rate_ass": "5421",
-    "rate_on": "5421"
-
-},
-{
-    "staff_no": "2",
-    "staff_name": "Garrett Winters",
-    "role": "Accountant",
-    "project_name": "$170,750",
-    "track_name": "2011/07/25",
-    "rating_history": "Tokyo",
-    "rate_ass": "8422",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "3",
-    "staff_name": "Ashton Cox",
-    "role": "Junior Technical Author",
-    "project_name": "$86,000",
-    "track_name": "2009/01/12",
-    "rating_history": "San Francisco",
-    "rate_ass": "1562",
-    "rate_on": "5421"
-
-},
-{
-    "staff_no": "4",
-    "staff_name": "Cedric Kelly",
-    "role": "Senior Javascript Developer",
-    "project_name": "$433,060",
-    "track_name": "2012/03/29",
-    "rating_history": "Edinburgh",
-    "rate_ass": "6224",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-},
-{
-    "staff_no": "5",
-    "staff_name": "Airi Satou",
-    "role": "Accountant",
-    "project_name": "$162,700",
-    "track_name": "2008/11/28",
-    "rating_history": "Tokyo",
-    "rate_ass": "5407",
-    "rate_on": "5421"
-}
+[
+    {
+        "staff_no": "1",
+        "staff_name": "Tiger Nixon",
+        "role": "System Architect",
+        "project_name": "$320,800",
+        "track_name": "2011/04/25",
+        "rating_history": "Edinburgh",
+        "rate_ass": "5421",
+        "rate_on": "5421",
+        "children": [
+            {
+                "staff_no": "1",
+                "staff_name": "Test 1n",
+                "role": "System Architect",
+                "project_name": "$320,800",
+                "track_name": "2011/04/25",
+                "rating_history": "Edinburgh",
+                "rate_ass": "5421",
+                "rate_on": "5421",
+                "children": [
+                    {
+                        "staff_no": "100",
+                        "staff_name": "Test Record",
+                        "role": "System Architect",
+                        "project_name": "$320,800",
+                        "track_name": "2011/04/25",
+                        "rating_history": "Edinburgh",
+                        "rate_ass": "5421",
+                        "rate_on": "5421"
+                    }]
+            }
+        ]
+    },
+    {
+        "staff_no": "2",
+        "staff_name": "Garrett Winters",
+        "role": "Accountant",
+        "project_name": "$170,750",
+        "track_name": "2011/07/25",
+        "rating_history": "Tokyo",
+        "rate_ass": "8422",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "3",
+        "staff_name": "Ashton Cox",
+        "role": "Junior Technical Author",
+        "project_name": "$86,000",
+        "track_name": "2009/01/12",
+        "rating_history": "San Francisco",
+        "rate_ass": "1562",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "4",
+        "staff_name": "Cedric Kelly",
+        "role": "Senior Javascript Developer",
+        "project_name": "$433,060",
+        "track_name": "2012/03/29",
+        "rating_history": "Edinburgh",
+        "rate_ass": "6224",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    },
+    {
+        "staff_no": "5",
+        "staff_name": "Airi Satou",
+        "role": "Accountant",
+        "project_name": "$162,700",
+        "track_name": "2008/11/28",
+        "rating_history": "Tokyo",
+        "rate_ass": "5407",
+        "rate_on": "5421"
+    }
 ]

@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './modules/users/login/login.component';
-import { PersonalInfoComponent } from './modules/users/personal-info/personal-info.component';
-import { UsersComponent } from './modules/users/users.component';
-import { CertificationDetailsComponent } from './modules/users/personal-info/certification-details/certification-details.component';
-import { ProjectConfigComponent } from './modules/users/project-management/project-config/project-config.component';
-import { AssociateEvaluateComponent } from './modules/users/associate-management/associate-evaluate/associate-evaluate.component';
+import { LoginComponent } from './pages/users/login/login.component';
+import { PersonalInfoComponent } from './pages/users/personal-info/personal-info.component';
+import { UsersComponent } from './pages/users/users.component';
+import { CertificationDetailsComponent } from './pages/users/personal-info/certification-details/certification-details.component';
+import { ProjectConfigComponent } from './pages/users/project-management/project-config/project-config.component';
+import { AssociateEvaluateComponent } from './pages/users/associate-management/associate-evaluate/associate-evaluate.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/login',
+    redirectTo:'/user/dashboard/details',
     pathMatch:'full'
   },
   {
     path:'login',
    component:LoginComponent
-  // loadChildren:() => import('../app/modules/users/login/')
+  // loadChildren:() => import('../app/pages/users/login/')
   },
   {
     path:'user',
-    loadChildren:() => import('./modules/users/users.module').then(m => m.UsersModule) 
+    loadChildren:() => import('./pages/users/users.module').then(m => m.UsersModule) 
   }
 
 ];

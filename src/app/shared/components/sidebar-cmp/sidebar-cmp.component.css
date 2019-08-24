@@ -14,6 +14,9 @@
     width: calc(100% - 30px);
     background-color: rgba(180,180,180,.3);
 }
+.menuName{
+    color:#ffffff !important
+}
 .sidebar-wrapper {
     position: relative;
     height: calc(100vh - 75px);
@@ -31,8 +34,14 @@
 .nav-item a[aria-expanded="true"] i{
     color: #049ad2 !important;
 }
+.nav-item a[aria-expanded="true"] .menuName{
+    color: #049ad2 !important;
+}
 .sidebar-wrapper li {
     color: #fff !important;
+}
+.inactiveMenu > i,.inactiveMenu > .menuName{
+    color: #bdc3c7 !important;
 }
 .logo .simple-text {
        /* text-transform: uppercase; */
@@ -120,6 +129,12 @@ li.nav-item {
 .nav li:hover:not(.active)>a,.collapse.show > ul {
     background-color: rgba(255,255,255,.1);
 }
+
+.nav li:hover:not(.active)>a.inactiveMenu {
+    background-color: transparent;
+    cursor:default;
+}
+
 
 .nav i {
     font-size: 18px;

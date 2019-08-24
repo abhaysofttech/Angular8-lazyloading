@@ -4,8 +4,10 @@ import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './modules/users/login/login.component';
+import { LoginComponent } from './pages/users/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+
+//import { NbThemeModule } from '@nebular/theme';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    //NbThemeModule.forRoot(),
     //UsersModule
   ],
   providers: [],

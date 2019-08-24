@@ -1,0 +1,75 @@
+{
+    "sku": [
+        {
+            "lineNumber": "6.0",
+            "partNumber": "WS-C3850-12X48U-S",
+            "configStatus": "VALID",
+            "dataSet": [
+                {
+                    "lineNumber": "6.0.1",
+                    "partNumber": "CON-SNTP-WSC385US"
+                },
+                {
+                    "lineNumber": "6.1",
+                    "partNumber": "PWR-C1-BLANK"
+                },
+                {
+                    "lineNumber": "6.2",
+                    "partNumber": "C3850-NM-BLANK"
+                }
+            ]
+        },
+        {
+            "lineNumber": "7.0",
+            "partNumber": "SFP-10G-SR-S=",
+            "configStatus": "INVALID",
+            "dataSet": [
+                {
+                    "lineNumber": "7.0.1"
+                   
+                },
+                {
+                    "lineNumber": "7.1",
+                    "configStatus": "INVALID",
+                    "dataSet": [
+                        {
+                            "lineNumber": "7.1.1"
+                        },
+                        {
+                            "lineNumber": "7.1.2"
+                        }
+                    ]
+                },
+                {
+                    "lineNumber": "7.2"
+                },
+                {
+                    "lineNumber": "7.3",
+                    "configStatus": "INVALID"
+                }
+            ]
+        },
+        {
+            "lineNumber": "8.0",
+            "partNumber": "L-MGMT3X-3K-K9=",
+            "configStatus": "VALID",
+            "dataSet": [
+                {
+                    "lineNumber": "8.0.1",
+                    "partNumber": "CON-ECMU-LMGMT3X3"
+                }
+            ]
+        },
+        {
+            "lineNumber": "5.0",
+            "partNumber": "PWR-C1-715WAC=",
+            "configStatus": "INVALID",
+            "dataSet": [
+                {
+                    "lineNumber": "5.1",
+                    "partNumber": "CAB-TA-EU"
+                }
+            ]
+        }
+    ]
+}

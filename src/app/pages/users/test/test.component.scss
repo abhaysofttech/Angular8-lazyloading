@@ -1,0 +1,45 @@
+.zen-row,.zen-row-header{
+    padding: 0px;
+    border-bottom: 1px solid #ccc;
+    // overflow: hidden;
+    display: -webkit-box;
+   
+}
+.zen-row-header{
+    background: #049ad2;
+    color: #fff;
+}
+.zen-cell {
+    // display: inline;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    // padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 10px;
+    // display: inline-block;
+    border: 1px solid rgba(225, 228, 232, 0.58);
+
+}
+.tableGridHeader{
+    z-index: 9;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+.tableGridBody {
+    top: 0px;
+    position: relative;
+}
+.firstLevel{
+   // padding-left: 11px;
+}
+.secondLevel{
+    padding-left: 15px;
+}
+.thirdLevel{
+    padding-left:30px;
+}
