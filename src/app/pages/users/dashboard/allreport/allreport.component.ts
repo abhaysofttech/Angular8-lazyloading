@@ -6,6 +6,7 @@ const leadWideDistributionChartdata = {
     "caption": "LEAD WISE DISTRIBUTION",
     "subcaption": "",
     "showvalues": "1",
+    "valueFontColor": "#ffffff",
     "plotgradientcolor": "",
     "formatnumberscale": "0",
     "showplotborder": "0",
@@ -25,7 +26,8 @@ const leadWideDistributionChartdata = {
     "showborder": "0",
     "rotateValues": "0",
     "labelDisplay": "auto",
-    "theme": "fusion"
+    "theme": "fusion",
+    "minPlotHeightForValue": "1"
   },
   "categories": [
     {
@@ -34,8 +36,6 @@ const leadWideDistributionChartdata = {
   ],
   "dataset": [{ "seriesname": "", "renderas": "", "data": [] }],
 };
-
-
 
 const genderBreakUpChartdata = {
 
@@ -53,38 +53,24 @@ const genderBreakUpChartdata = {
   },
   data: []
 };
-
-
-
-const data = {
-  chart: {
-    caption: "Market Share of Web Servers",
+const overAllAssociatesChartdata = {
+  "chart": {
+    caption: "OVERALL ASSOCIATES",
     plottooltext: "<b>$percentValue</b> of web servers run on $label servers",
     showlegend: "1",
     showpercentvalues: "1",
     legendposition: "bottom",
     usedataplotcolorforlabels: "1",
-    theme: "fusion"
+    palettecolors: "5d62b5,29c3be,f2726f",
+    theme: "fusion",
+    bgColor: "#ffffff",
+    showBorder: "0",
   },
-  data: [
-    {
-      label: "Apache",
-      value: "32647479"
-    },
-    {
-      label: "Microsoft",
-      value: "22100932"
-    },
-    {
-      label: "Zeus",
-      value: "14376"
-    },
-    {
-      label: "Other",
-      value: "18674221"
-    }
-  ]
+  "data": []
 };
+
+
+
 @Component({
   selector: 'app-allreport',
   templateUrl: './allreport.component.html',
@@ -98,18 +84,10 @@ export class AllreportComponent implements OnInit {
   genderChartWDataFormat = 'json';
   genderChartWDataSource = genderBreakUpChartdata;
   leadWiseDistributionDataSource = leadWideDistributionChartdata;
-
-
   leadWiseDistributionChartType = 'stackedcolumn2d';
 
-  // overAllAssociatesDataSource = overAllAssociatesChartdata;
-  // leadWiseDistributionDataSource = leadWideDistributionChartdata;
+  overAllAssociatesDataSource = overAllAssociatesChartdata;
 
-  width = 600;
-  height = 400;
-  type = "pie2d";
-  dataFormat = "json";
-  dataSource = data;
 
   constructor(private api: ApiService) { }
 
@@ -125,7 +103,8 @@ export class AllreportComponent implements OnInit {
         // let genderData = JSON.parse(response[0].genderChartData);
         let genderData = response[0];
         let leadwiseDistributionData = response[1];
-        console.log(response)
+        let overAllAssociatesData = response[2];
+        
         // Plot Gender graph
         this.genderChartWDataSource.data = [];
         for (let i = 0; i < genderData.genderChartData.length; i++) {
@@ -134,6 +113,20 @@ export class AllreportComponent implements OnInit {
             value: genderData.genderChartData[i][1]
           })
         }
+
+         // Plot OverAll Associates graph
+         this.overAllAssociatesDataSource.data = [];
+         let totalAssociatesCount: number = 0;
+         let overAllAssociateObjectKeys = Object.keys(overAllAssociatesData.pieChartData);
+
+         for (let i = 0; i < overAllAssociateObjectKeys.length; i++) {
+           this.overAllAssociatesDataSource.data.push({
+             "label": overAllAssociateObjectKeys[i],
+             "value": overAllAssociatesData.pieChartData[overAllAssociateObjectKeys[i]]
+           })
+           totalAssociatesCount = totalAssociatesCount + overAllAssociatesData.pieChartData[overAllAssociateObjectKeys[i]];
+         }
+         this.overAllAssociatesDataSource.chart.subcaption = "Total Count: " + totalAssociatesCount;
 
 
         // Plot Leadwise Distribution graph

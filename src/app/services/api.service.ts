@@ -62,16 +62,16 @@ export class ApiService {
     let genderChartResponse = this.httpPlugin.get(this.currentURL + this.apiURL.getGenderChartForPGM + empNumber +
       "/" + empRole, {});
 
-    // // Http get method for bar chart
+    // Http get method for bar chart
     let leadWiseResponse = this.httpPlugin.get(this.currentURL  + this.apiURL.pgmDistributionService + empNumber +
       "/" + empRole, {});
-    // // Http get method for overall associates chart
-    // let overAllAssociatesChartResponse = this.httpPlugin.get(apiURL.localURL + apiURL.overallAssociatesService +
-    //   empNumber + "/" + empRole, {});
+    // Http get method for overall associates chart
+    let overAllAssociatesChartResponse = this.httpPlugin.get(this.currentURL + this.apiURL.overallAssociatesService +
+      empNumber + "/" + empRole, {});
 
     // return forkJoin([twentyFiveWindowResponse, dashboardResponse, genderChartResponse,
     //   barChartResponse, overAllAssociatesChartResponse])
-    return forkJoin([genderChartResponse,leadWiseResponse]);
+    return forkJoin([genderChartResponse,leadWiseResponse,overAllAssociatesChartResponse]);
 
   }
 

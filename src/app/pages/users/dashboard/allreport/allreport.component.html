@@ -9,7 +9,7 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-icon">
                         <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no">99260</h1>
+                        <h1 class="card-title ass-no font-color-theme-1">99260</h1>
                     </div>
                     <div class="card-footer">
                         <div class="stats"><span>Total Assosiate</span></div>
@@ -20,7 +20,7 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-icon">
                         <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no">99260</h1>
+                        <h1 class="card-title ass-no font-color-theme-2">99260</h1>
                     </div>
                     <div class="card-footer">
                         <div class="stats"><span>Billable</span></div>
@@ -31,7 +31,7 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-icon">
                         <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no">99260</h1>
+                        <h1 class="card-title ass-no font-color-theme-3">99260</h1>
                     </div>
                     <div class="card-footer">
                         <div class="stats"><span>Non Billable</span></div>
@@ -42,7 +42,7 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-icon">
                         <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no">99260</h1>
+                        <h1 class="card-title ass-no font-color-theme-4">99260</h1>
                     </div>
                     <div class="card-footer">
                         <div class="stats"><span>In Transit</span></div>
@@ -53,7 +53,7 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-icon">
                         <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no">99260</h1>
+                        <h1 class="card-title ass-no font-color-theme-5">99260</h1>
                     </div>
                     <div class="card-footer">
                         <div class="stats"><span>EBR</span></div>
@@ -64,7 +64,7 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-icon">
                         <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no">99260</h1>
+                        <h1 class="card-title ass-no font-color-theme-6">99260</h1>
                     </div>
                     <div class="card-footer">
                         <div class="stats"><span>In Pool</span></div>
@@ -78,15 +78,14 @@
 
 <div class="row">
     <div class="col-6 no-padding">
-        <div class="card card-stats">
-            <!-- <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="genderChartType"
-              [dataFormat]="genderChartWDataFormat" [dataSource]="genderChartWDataSource">
-            </fusioncharts> -->
-
-            <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="leadWiseDistributionChartType"
-            [dataFormat]="genderChartWDataFormat" [dataSource]="leadWiseDistributionDataSource">
-          </fusioncharts>
-        </div>
+        <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="leadWiseDistributionChartType"
+        [dataFormat]="genderChartWDataFormat" [dataSource]="leadWiseDistributionDataSource">
+      </fusioncharts>
+    </div>
+    <div class="col-6 no-padding">
+        <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="genderChartType"
+        [dataFormat]="genderChartWDataFormat" [dataSource]="overAllAssociatesDataSource">
+      </fusioncharts>
     </div>
     <div class="col-6 no-padding">
         <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="genderChartType"
