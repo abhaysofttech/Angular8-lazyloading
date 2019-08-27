@@ -383,3 +383,7 @@ input[type="checkbox"]:checked + label:before {
 .ag-theme-balham .sick-days-breach {
     background-color: lightcoral !important;
 }
+
+.align-center{
+    text-align: center;
+}

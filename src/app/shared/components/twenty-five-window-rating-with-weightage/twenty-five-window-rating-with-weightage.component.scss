@@ -1,0 +1,93 @@
+$border-black: 2px solid #000;
+$border-red: 2px solid red;
+$border-gray: 1px solid #ccc;
+// .container-25w{
+//   max-width: 500px;
+
+// }
+.title_25W{
+    align-items: center;
+    padding: 3px;
+    font-size: 12px;
+    line-height: normal;
+  }
+.block_25W{
+  height: 70px;
+  max-width: 70px;
+  padding: 3px;
+}
+  .border-black{
+    border: $border-black;
+  }
+  .border-red{
+    border: $border-red;
+  }
+  .border-gray{
+    border: $border-gray;
+  }
+  .col-centered-25w{
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+  }
+  .col-centered-25w span{
+    width: 100%;
+    text-align: center;
+  }
+  
+.alignTechnicalExp {
+  background: linear-gradient(to top, rgba(255, 0, 0, 0), white);
+  margin-top: 65px;
+  margin-left: 0;
+  margin-bottom: 75px;
+  border: 0px;
+  border-radius: 5px;
+  height: 250px;
+  width: 23px;
+  position: absolute;
+}
+
+.alignSolutionExp {
+  background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 255, 255, 1));
+  margin-left: 15%;
+  border: 0px;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 200px;
+  height: 20px;
+}
+.record-row-25W{
+  padding-left:40px;
+}
+.sub-value-25w {
+  color: #8e8e8e;
+  display: inline-block;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.sub-value-25w i.fa-sort-up {
+  padding-left: 7px;
+  padding-right: 6px;
+  font-size: 19px;
+  vertical-align: -webkit-baseline-middle;
+  display: inline-flex;
+}
+.sub-value-25w i.fa-sort-down {
+  padding-left: 7px;
+  padding-right: 6px;
+  font-size: 19px;
+}
+.value-25w {
+  color: #8e8e8e;
+  display: contents;
+  font-size: 23px;
+}
+.value-25w i {
+  padding-left: 4px;
+  padding-right: 6px;
+  font-size: 19px;
+  vertical-align: -webkit-baseline-middle;
+  display: inline-flex;
+}

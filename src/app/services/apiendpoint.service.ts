@@ -8,6 +8,11 @@ export class ApiendpointService {
         localURL: "http://10.107.168.23:8082/ZenForteWebServices/api/",
 
         baseURL: "/ZenForteWebServices_PreRelease/api/",
+        // Login with Token
+        loginServiceWithEncryptedToken: "authentication/greetCopyNew",
+
+        // Login without token & password will be by pass with user enters "$Zen2017
+        loginSerivce: "authentication/greetBody",
         // Dashboard graph for CEO, SRMGMT & BU
         dashboardGraphForCeoSrmgmtBuService: "managementDashboard/graphNew?role=BU",
 

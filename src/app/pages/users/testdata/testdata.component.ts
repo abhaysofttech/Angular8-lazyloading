@@ -167,7 +167,6 @@ export class TestdataComponent implements OnInit {
   }
 
   public onCellClick(data: any): any {
-    debugger
     console.log(data);
   }
 }

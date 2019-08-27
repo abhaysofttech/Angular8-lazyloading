@@ -1,0 +1,82 @@
+
+
+<div class="container-25w">
+    <span>
+        <img src="../../../../assets/images/technical_expertise_.png" width="6%" class="alignTechnicalExp">
+    </span>
+    <h6>{{title25w}}</h6>
+    <div class="row no-margin record-row-25W" *ngFor="let item of weightageData;let i=index">
+        <div class="col-2 col-centered-25w title_25W  border-gray">
+            <span *ngIf="i==0">Expert</span>
+            <span *ngIf="i==1">Valuable Contributor</span>
+            <span *ngIf="i==2">Independent Worker</span>
+            <span *ngIf="i==3">Need Handholding</span>
+            <span *ngIf="i==4">Under Watch</span>
+        </div>
+        <div class="col-2 col-centered-25w  block_25W border-gray">
+            <div class="sub-value-25w"
+                *ngIf="item.deviationval1 !='' && item.deviationval1 !=='0' &&  item.deviationval1 !== null">
+                <span>{{item.deviationval1}}</span><i class="fa"
+                    [ngClass]="{'fa-sort-up':item.deviationval1>0,'fa-sort-down':item.deviationval1<0}"></i></div>
+            <div class="value-25w" *ngIf="item.value1 !='' && item.value1 !=='0'"><span>{{item.value1}}</span><i
+                    class="fa fa-user"></i></div>
+        </div>
+        <div class="col-2 col-centered-25w  block_25W border-gray">
+            <div class="sub-value-25w"
+                *ngIf="item.deviationval2 !='' && item.deviationval2 !=='0' &&  item.deviationval2 !== null">
+                <span>{{item.deviationval2}}</span><i class="fa"
+                    [ngClass]="{'fa-sort-up':item.deviationval2>0,'fa-sort-down':item.deviationval2<0}"></i></div>
+            <div class="value-25w" *ngIf="item.value2 !='' && item.value2 !=='0'"><span>{{item.value2}}</span><i
+                    class="fa fa-user"></i></div>
+        </div>
+        <div class="col-2 col-centered-25w  block_25W border-gray">
+            <div class="sub-value-25w"
+                *ngIf="item.deviationval3 !='' && item.deviationval3 !=='0' &&  item.deviationval3 !== null">
+                <span>{{item.deviationval3}}</span><i class="fa"
+                    [ngClass]="{'fa-sort-up':item.deviationval3>0,'fa-sort-down':item.deviationval3<0}"></i></div>
+            <div class="value-25w" *ngIf="item.value3 !='' && item.value3 !=='0'"><span>{{item.value3}}</span><i
+                    class="fa fa-user"></i></div>
+        </div>
+        <div class="col-2 col-centered-25w  block_25W border-gray">
+            <div class="sub-value-25w"
+                *ngIf="item.deviationval4 !='' && item.deviationval4 !=='0' &&  item.deviationval4 !== null">
+                <span>{{item.deviationval4}}</span><i class="fa"
+                    [ngClass]="{'fa-sort-up':item.deviationval4>0,'fa-sort-down':item.deviationval4<0}"></i></div>
+            <div class="value-25w" *ngIf="item.value4 !='' && item.value4 !=='0'"><span>{{item.value4}}</span><i
+                    class="fa fa-user"></i></div>
+        </div>
+        <div class="col-2 col-centered-25w  block_25W border-gray">
+            <div class="sub-value-25w"
+                *ngIf="item.deviationval5 !='' && item.deviationval5 !=='0' &&  item.deviationval5 !== null">
+                <span>{{item.deviationval5}}</span><i class="fa"
+                    [ngClass]="{'fa-sort-up':item.deviationval5>0,'fa-sort-down':item.deviationval5<0}"></i></div>
+            <div class="value-25w" *ngIf="item.value5 !='' && item.value5 !=='0'"><span>{{item.value5}}</span><i
+                    class="fa fa-user"></i></div>
+        </div>
+    </div>
+
+    <div class="row no-margin record-row-25W">
+        <div class="col-2 col-centered-25w title_25W border-gray">
+            <span></span>
+        </div>
+        <div class="col-2 col-centered-25w title_25W block_25W border-gray">
+            <span>Under Watch</span>
+        </div>
+        <div class="col-2 col-centered-25w title_25W block_25W border-gray">
+            <span>Need Handholding</span>
+        </div>
+        <div class="col-2 col-centered-25w title_25W block_25W border-gray">
+            <span>Independent Worker</span>
+        </div>
+        <div class="col-2 col-centered-25w title_25W block_25W border-gray">
+            <span>Valuable Contributor</span>
+        </div>
+        <div class="col-2 col-centered-25w title_25W block_25W border-gray">
+            <span>Expert</span>
+        </div>
+    </div>
+    <span>
+        <img src="../../../../assets/images/solution_expertise_.png" class="alignSolutionExp">
+    </span>
+
+</div>

@@ -50,8 +50,8 @@ export class ApiService {
     // this.httpPlugin.setHeader('*', 'Content-Type', "application/json");
 
     // Http post method for Graph
-    // let twentyFiveWindowResponse = this.httpPlugin.post(this.url + this.twentyFiveWindowService +
-    //   empNumber + "&role=" + empRole, {}, {})
+    let twentyFiveWindowResponse = this.httpPlugin.post(this.currentURL + this.apiURL.twentyFiveWindowService +
+      empNumber + "&role=" + empRole, {}, {})
 
     // Http get method for dashboard data
     // let dashboardResponse = this.httpPlugin.get(this.url + this.dashboardCountsForCeoSrmgmtBuService,
@@ -71,8 +71,74 @@ export class ApiService {
 
     // return forkJoin([twentyFiveWindowResponse, dashboardResponse, genderChartResponse,
     //   barChartResponse, overAllAssociatesChartResponse])
-    return forkJoin([genderChartResponse,leadWiseResponse,overAllAssociatesChartResponse]);
+    return forkJoin([genderChartResponse,leadWiseResponse,overAllAssociatesChartResponse,twentyFiveWindowResponse]);
 
+  }
+
+  /**
+   * Below method is used to get dashboard data for CEO, SRMGMT & BU 
+   */
+  getDashboardDataForCeoSrmgmtBu(authToken: string): Observable<any> {
+    // Http get method for Graph
+    let graphResponse = this.httpPlugin.get(this.currentURL + this.apiURL.dashboardGraphForCeoSrmgmtBuService, {});
+
+    // Http get method for Account list
+    let accountList = this.httpPlugin.get(this.currentURL + this.apiURL.getAccountList, {});
+
+    // Http get method for Total Associates count
+    let totalAssociatesCount = this.httpPlugin.get(this.currentURL + this.apiURL.getTotalAssociatesCount, {});
+
+    // Http get method for Total Billable count
+    let totalBillableAssociatesCount = this.httpPlugin.get(this.currentURL + this.apiURL.getBillableAssociatesCount, {});
+
+    // Http get method for Non Billable count
+    let totalNonBillableAssociatesCount = this.httpPlugin.get(this.currentURL + this.apiURL.getNonBillableAssociatesCount, {});
+
+    // Http get method for InTransit count
+    let totalInTransitCount = this.httpPlugin.get(this.currentURL + this.apiURL.getInTransitCount, {});
+
+    // Http get method for Pool count
+    let totalPoolCount = this.httpPlugin.get(this.currentURL + this.apiURL.getPoolCount, {});
+
+    // Http get method for EBR count
+    let totalEbrCount = this.httpPlugin.get(this.currentURL + this.apiURL.getEbrCount, {});
+
+    // Http get method for OnShore location wise count
+    let totalOnShoreLocationWiseCount = this.httpPlugin.get(this.currentURL + this.apiURL.getOnShoreLocationWiseCount, {});
+
+    // Http get method for OffShore location wise count
+    let totalOffShoreLocationWiseCount = this.httpPlugin.get(this.currentURL + this.apiURL.getOffShoreLocationWiserCount, {});
+
+    // Http get method for Visa count
+    let totalVisaCount = this.httpPlugin.get(this.currentURL + this.apiURL.getVisaCount, {});
+
+    return forkJoin([graphResponse, accountList, totalAssociatesCount, totalBillableAssociatesCount,
+      totalNonBillableAssociatesCount, totalInTransitCount, totalEbrCount, totalPoolCount, totalOnShoreLocationWiseCount,
+      totalOffShoreLocationWiseCount, totalVisaCount])
+  }
+
+
+  login(userName: string, password: string): Observable<any> {
+
+  //  return new Promise((resolve, reject) => {
+
+      // Prepare body
+      let body = {
+        "strUsername": userName,
+        "strPassword": password
+      }
+
+      // Prepare headers
+      // let headers: {
+      //   "Content-Type": "application/json"
+      // }
+
+      // Http post method 
+      // this.httpPlugin.post(this.url + this.loginServiceWithEncryptedToken, body, headers)
+      let loginData = this.httpPlugin.post(this.currentURL + this.apiURL.loginSerivce,body);
+    //  this.httpPlugin.post(this.currentURL + this.apiURL.loginSerivce, body)
+       return loginData;
+   // });
   }
 
 

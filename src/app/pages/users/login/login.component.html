@@ -1,5 +1,8 @@
 <!-- <app-header></app-header> -->
+<app-loading-spinner></app-loading-spinner>           
+
 <div class="login-reg-panel">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
     <div class="login-info-box">
         <h2>Have an account?</h2>
         <p>Lorem ipsum dolor sit amet</p>
@@ -10,16 +13,16 @@
     <div class="register-info-box">
             <img src="../../../../assets/images/ZenForte3.png" class="logo"/>
     </div>
-                        
     <div class="white-panel">
             <!-- <img src="../../../../assets/images/ZenForte3.png" class="logo"/> -->
         <div class="login-show">
             <h2>LOGIN</h2>
-            <input type="text" placeholder="User Name">
-            <input type="password" placeholder="Password">
-            <input type="button" value="Login" [routerLink]="'/user/personal/details'">
+            <input type="text" placeholder="User Name" class="form-control" ngModel name="username" required>
+            <input type="password" placeholder="Password" class="form-control" ngModel name="password" required>
+            <input type="submit" value="Login" [routerLink]="'/user/personal/details'" [disabled]="!loginForm.valid">
             <a href="">Forgot password?</a>
         </div>
     </div>
+</form>
 </div>
 <div class="sidebar-background" ></div>
