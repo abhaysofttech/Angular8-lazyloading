@@ -101,15 +101,17 @@ a{
 .login-show input[type="text"], .login-show input[type="password"]{
     width: 100%;
     display: block;
-    margin:20px 0;
+    margin: 20px 0;
     padding: 15px;
     border: 1px solid #b5b5b5;
     outline: none;
+    border-radius: 0;
+    height: auto;
 }
-.login-show input[type="button"] {
+.login-show input[type="button"],.login-show input[type="submit"] {
     max-width: 150px;
     width: 100%;
-    background: #444444;
+    background-color: #444444;
     color: #f9f9f9;
     border: none;
     padding: 10px;
@@ -117,6 +119,11 @@ a{
     border-radius: 2px;
     float:right;
     cursor:pointer;
+}
+.login-show input[type="submit"]:disabled {
+    color: rgb(84, 84, 84);
+    cursor: default;
+    background-color: rgb(235, 235, 228);
 }
 .login-show a{
     display:inline-block;

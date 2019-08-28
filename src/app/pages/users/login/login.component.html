@@ -17,9 +17,9 @@
             <!-- <img src="../../../../assets/images/ZenForte3.png" class="logo"/> -->
         <div class="login-show">
             <h2>LOGIN</h2>
-            <input type="text" placeholder="User Name" class="form-control" ngModel name="username" required>
-            <input type="password" placeholder="Password" class="form-control" ngModel name="password" required>
-            <input type="submit" value="Login" [routerLink]="'/user/personal/details'" [disabled]="!loginForm.valid">
+            <input type="text" placeholder="User Name" class="form-control" [(ngModel)]="loginData.username" name="username" required>
+            <input type="password" placeholder="Password" class="form-control" [(ngModel)]="loginData.password" name="password" required value="Abhay">
+            <input type="submit" value="Login" [disabled]="!loginForm.valid" >
             <a href="">Forgot password?</a>
         </div>
     </div>

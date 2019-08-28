@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { commonService } from 'src/app/services/shared.service';
 
 const leadWideDistributionChartdata = {
   "chart": {
@@ -66,7 +67,7 @@ const overAllAssociatesChartdata = {
     showpercentvalues: "1",
     legendposition: "bottom",
     usedataplotcolorforlabels: "1",
-    palettecolors: "5d62b5,29c3be,f2726f,ccccc",
+    palettecolors: "5d62b5,4b96c1,efa819,ccccc",
     theme: "fusion",
     bgColor: "#ffffff",
     showBorder: "0",
@@ -184,22 +185,29 @@ export class AllreportComponent implements OnInit {
   dhDataFormat = "json";
   dhDataSource = dhDataSet;
 
-  constructor(private api: ApiService) { }
+  userData :any;
+  constructor(private api: ApiService, private _data: commonService) { }
 
   ngOnInit() {
+    this._data.currentData.subscribe(
+      currentData => {
+        this.userData = currentData
+      }
+    )
 
     //overAllAssociatesDataSource
 
     // this.api.getDashboardDataForPGM1("text Data test")
     // .then((data: any) => { console.log(data) });
-    this.empRole = 'CEO';
-    this.empNumber = "47375"
+    this.empRole = this.userData.role;
+    this.empNumber = this.userData.staffNo;
+
 
     this.api.login("", "PGM")
       .subscribe(response => {
         console.log(response);
       })
-    this.api.getDashboardDataForPGM("", "PGM", "20521")
+    this.api.getDashboardDataForPGM("", this.empRole, this.empNumber)
       .subscribe(response => {
         let genderData = response[0];
         let leadwiseDistributionData = response[1];
@@ -221,14 +229,14 @@ export class AllreportComponent implements OnInit {
         let overAllAssociateObjectKeys = Object.keys(overAllAssociatesData.pieChartData);
 
         for (let i = 0; i < overAllAssociateObjectKeys.length; i++) {
-          this.overAllAssociatesDataSource.data.push({  
+          this.overAllAssociatesDataSource.data.push({
             "label": overAllAssociateObjectKeys[i],
             "value": overAllAssociatesData.pieChartData[overAllAssociateObjectKeys[i]]
           })
           totalAssociatesCount = totalAssociatesCount + overAllAssociatesData.pieChartData[overAllAssociateObjectKeys[i]];
         }
         // this.overAllAssociatesDataSource.chart.subcaption = "Total Count: " + totalAssociatesCount;
-
+        debugger
         // Assign values to the variable
         this.tfwWithoutWeightageData = twentyFiveWindowDataResponse.withoutWeightage;
         this.tfwWithoutWeightagePercentageData = twentyFiveWindowDataResponse.withoutWeightagePercentage;

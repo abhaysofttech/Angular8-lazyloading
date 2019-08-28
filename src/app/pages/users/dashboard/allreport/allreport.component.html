@@ -1,206 +1,213 @@
 <!-- <fusioncharts [width]="width" [height]="height" [type]="type" [dataFormat]="dataFormat" [dataSource]="dataSource">
 </fusioncharts> -->
-
-<div class="row">
-    <div class="col-8">
-        <fusioncharts [width]="dhWidth" [height]="dhHeight" [type]="dhType" [dataFormat]="dhDataFormat"
-            [dataSource]="dhDataSource">
-        </fusioncharts>
-    </div>
-    <div class="col-4">
-        <div class="row">
-            <div class="col-6 no-padding">
-                <div class="card card-stats">
-                    <div class="card-header card-header-icon">
-                        <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no font-color-theme-1">{{totalAssociatesCount}}</h1>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats"><span>Total Assosiate</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 no-padding">
-                <div class="card card-stats">
-                    <div class="card-header card-header-icon">
-                        <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no font-color-theme-2">{{totalBillableCount}}</h1>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats"><span>Billable</span></div>
+<section *ngIf="empRole =='CEO' || empRole =='SRMGMT' || empRole == 'BU' || empRole =='DH'">
+    <div class="row">
+        <div class="col-8">
+            <fusioncharts [width]="dhWidth" [height]="dhHeight" [type]="dhType" [dataFormat]="dhDataFormat"
+                [dataSource]="dhDataSource">
+            </fusioncharts>
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col-6 no-padding">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-icon">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <h1 class="card-title ass-no font-color-theme-1">{{totalAssociatesCount}}</h1>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats"><span>Total Assosiate</span></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-6 no-padding">
-                <div class="card card-stats">
-                    <div class="card-header card-header-icon">
-                        <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no font-color-theme-3">{{totalNonBillableCount}}</h1>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats"><span>Non Billable</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 no-padding">
-                <div class="card card-stats">
-                    <div class="card-header card-header-icon">
-                        <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no font-color-theme-4">{{totalInTransitCount}}</h1>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats"><span>In Transit</span></div>
+                <div class="col-6 no-padding">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-icon">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <h1 class="card-title ass-no font-color-theme-2">{{totalBillableCount}}</h1>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats"><span>Billable</span></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-6 no-padding">
-                <div class="card card-stats">
-                    <div class="card-header card-header-icon">
-                        <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no font-color-theme-5">{{totalEbrCount}}</h1>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats"><span>EBR</span></div>
+                <div class="col-6 no-padding">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-icon">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <h1 class="card-title ass-no font-color-theme-3">{{totalNonBillableCount}}</h1>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats"><span>Non Billable</span></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-6 no-padding">
-                <div class="card card-stats">
-                    <div class="card-header card-header-icon">
-                        <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <h1 class="card-title ass-no font-color-theme-6">{{totalInPollCount}}</h1>
+                <div class="col-6 no-padding">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-icon">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <h1 class="card-title ass-no font-color-theme-4">{{totalInTransitCount}}</h1>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats"><span>In Transit</span></div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="stats"><span>In Pool</span></div>
+                </div>
+                <div class="col-6 no-padding">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-icon">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <h1 class="card-title ass-no font-color-theme-5">{{totalEbrCount}}</h1>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats"><span>EBR</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 no-padding">
+                    <div class="card card-stats">
+                        <div class="card-header card-header-icon">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <h1 class="card-title ass-no font-color-theme-6">{{totalInPollCount}}</h1>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats"><span>In Pool</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
-<hr />
-<div class="row">
-    <div class="col-4">
-        <div class="card card-stats">
-            <div class="card-header card-header-icon no-padding">
-                <div class="fusion-title">Offshore Assosiate</div>
-                <h1 class="card-title ass-no font-color-theme-1">{{totalOnshoreCount}}</h1>
-            </div>
-            <div class="row no-margin">
-                <div class="col-4 no-padding align-center">
-                    <div class="onShore-count">
-                        <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <span>{{onShoreLocation1Count}}</span>
-                    </div>
-                    <div class="onShore-location">
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-4">
+            <div class="card card-stats">
+                <div class="card-header card-header-icon no-padding">
+                    <div class="fusion-title">Offshore Assosiate</div>
+                    <h1 class="card-title ass-no font-color-theme-1">{{totalOnshoreCount}}</h1>
+                </div>
+                <div class="row no-margin">
+                    <div class="col-4 no-padding align-center">
+                        <div class="onShore-count">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <span>{{onShoreLocation1Count}}</span>
+                        </div>
+                        <div class="onShore-location">
                             <span>{{onShoreUniqueLocations["0"]}}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-4 no-padding align-center">
-                    <div class="onShore-count">
-                        <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <span>{{onShoreLocation2Count}}</span>
-                    </div>
-                    <div class="onShore-location">
+                    <div class="col-4 no-padding align-center">
+                        <div class="onShore-count">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <span>{{onShoreLocation2Count}}</span>
+                        </div>
+                        <div class="onShore-location">
                             <span>{{onShoreUniqueLocations["1"]}}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-4 no-padding align-center">
-                    <div class="onShore-count">
-                        <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                        <span>{{onShoreLocation3Count}}</span>
-                    </div>
-                    <div class="onShore-location">
+                    <div class="col-4 no-padding align-center">
+                        <div class="onShore-count">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <span>{{onShoreLocation3Count}}</span>
+                        </div>
+                        <div class="onShore-location">
                             <span>{{onShoreUniqueLocations["2"]}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-4">
-        <div class="card card-stats">
-            <div class="card-header card-header-icon no-padding">
-                <div class="fusion-title">Offshore Assosiate</div>
-                <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                <h1 class="card-title ass-no font-color-theme-1">{{totalOffshoreCount}}</h1>
+        <div class="col-4">
+            <div class="card card-stats">
+                <div class="card-header card-header-icon no-padding">
+                    <div class="fusion-title">Offshore Assosiate</div>
+                    <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                    <h1 class="card-title ass-no font-color-theme-1">{{totalOffshoreCount}}</h1>
+                </div>
+                <!-- <div class="card-footer">
+                                <div class="stats"><span>Onshore Assosiate</span></div>
+                            </div> -->
+                <div class="row no-margin">
+                    <div class="col-4 no-padding align-center">
+                        <div class="onShore-count">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <span>{{offShoreLocation1Count}}</span>
+                        </div>
+                        <div class="onShore-location">
+                            <div class="stats"><span>{{offShoreUniqueLocations["0"]}}</span></div>
+                        </div>
+                    </div>
+                    <div class="col-4 no-padding align-center">
+                        <div class="onShore-count">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <span>{{offShoreLocation2Count}}</span>
+                        </div>
+                        <div class="onShore-location">
+                            <div class="stats"><span>{{offShoreUniqueLocations["1"]}}</span></div>
+                        </div>
+                    </div>
+                    <div class="col-4 no-padding align-center">
+                        <div class="onShore-count">
+                            <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                            <span>{{offShoreLocation3Count}}</span>
+                        </div>
+                        <div class="onShore-location">
+                            <div class="stats"><span>{{offShoreUniqueLocations["2"]}}</span></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- <div class="card-footer">
-                <div class="stats"><span>Onshore Assosiate</span></div>
-            </div> -->
-            <div class="row no-margin">
-                <div class="col-4 no-padding align-center">
-                        <div class="onShore-count">
-                                <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                                <span>{{offShoreLocation1Count}}</span>
-                            </div>
-                            <div class="onShore-location">
-                                <div class="stats"><span>{{offShoreUniqueLocations["0"]}}</span></div>
-                            </div>
+        </div>
+        <div class="col-4">
+            <div class="card card-stats">
+                <div class="card-header card-header-icon no-padding">
+                    <div class="fusion-title">Visa Talent Unused</div>
+                    <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
+                    <h1 class="card-title ass-no font-color-theme-1">{{totalVisaUnusedCount}}</h1>
                 </div>
-                <div class="col-4 no-padding align-center">
-                        <div class="onShore-count">
-                                <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                                <span>{{offShoreLocation2Count}}</span>
-                            </div>
-                            <div class="onShore-location">
-                                <div class="stats"><span>{{offShoreUniqueLocations["1"]}}</span></div>
-                            </div>
-                </div>
-                <div class="col-4 no-padding align-center">
-                        <div class="onShore-count">
-                                <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                                <span>{{offShoreLocation3Count}}</span>
-                            </div>
-                            <div class="onShore-location">
-                                <div class="stats"><span>{{offShoreUniqueLocations["2"]}}</span></div>
-                            </div>
+                <div class="card-footer">
+                    <div class="stats"><span>Visa Talent Unused</span></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-4">
-        <div class="card card-stats">
-            <div class="card-header card-header-icon no-padding">
-                <div class="fusion-title">Visa Talent Unused</div>
-                <!-- <div class="card-icon color-theme-1"><i class="material-icons">weekend</i></div> -->
-                <h1 class="card-title ass-no font-color-theme-1">{{totalVisaUnusedCount}}</h1>
-            </div>
-            <div class="card-footer">
-                <div class="stats"><span>Visa Talent Unused</span></div>
-            </div>
+    <hr />
+</section>
+
+
+<section *ngIf="empRole =='PGM' || empRole == 'MGR'">
+    <div class="row">
+        <div class="col-6">
+            <app-twenty-five-window-rating-with-weightage [weightageData]="tfwWithWeightageData" [title25w]="'Actual'"
+                *ngIf="tfwWithWeightageData"></app-twenty-five-window-rating-with-weightage>
+        </div>
+        <div class="col-6">
+            <app-twenty-five-window-rating-with-weightage [weightageData]="tfwWithWeightagePercentageData"
+                [title25w]="'Actual & Deviation in % (only for the baseline approved projects)'"
+                *ngIf="tfwWithWeightagePercentageData"></app-twenty-five-window-rating-with-weightage>
         </div>
     </div>
-</div>
-<hr />
+    <div class="row">
 
-<div class="row">
-    <div class="col-6">
-            <app-twenty-five-window-rating-with-weightage [weightageData]="tfwWithWeightageData" [title25w]="'Actual'" *ngIf="tfwWithWeightageData"></app-twenty-five-window-rating-with-weightage>
-    </div>
-    <div class="col-6">
-            <app-twenty-five-window-rating-with-weightage [weightageData]="tfwWithWeightagePercentageData" [title25w]="'Actual Data &'" *ngIf="tfwWithWeightagePercentageData"></app-twenty-five-window-rating-with-weightage>
+            <div class="col-6 fustion-cart-container">
+                <div class="fusion-title">Lead Wise Distribution</div>
+                <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="leadWiseDistributionChartType"
+                    [dataFormat]="genderChartWDataFormat" [dataSource]="leadWiseDistributionDataSource">
+                </fusioncharts>
+            </div>
+            <div class="col-6 fustion-cart-container">
+                <div class="fusion-title">Overall Associate</div>
+                <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="genderChartType"
+                    [dataFormat]="genderChartWDataFormat" [dataSource]="overAllAssociatesDataSource">
+                </fusioncharts>
+            </div>
+            <div class="col-6 fustion-cart-container">
+                <div class="fusion-title">Gender Wise Break Up</div>
+        
+                <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="genderChartType"
+                    [dataFormat]="genderChartWDataFormat" [dataSource]="genderChartWDataSource">
+                </fusioncharts>
+            </div>
         </div>
-</div>
-<div class="row">
-
-    <div class="col-6 fustion-cart-container">
-        <div class="fusion-title">Lead Wise Distribution</div>
-        <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="leadWiseDistributionChartType"
-            [dataFormat]="genderChartWDataFormat" [dataSource]="leadWiseDistributionDataSource">
-        </fusioncharts>
-    </div>
-    <div class="col-6 fustion-cart-container">
-        <div class="fusion-title">Overall Associate</div>
-        <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="genderChartType"
-            [dataFormat]="genderChartWDataFormat" [dataSource]="overAllAssociatesDataSource">
-        </fusioncharts>
-    </div>
-    <div class="col-6 fustion-cart-container">
-        <div class="fusion-title">Gender Wise Break Up</div>
-
-        <fusioncharts [width]="genderChartWidth" [height]="genderChartWHeight" [type]="genderChartType"
-            [dataFormat]="genderChartWDataFormat" [dataSource]="genderChartWDataSource">
-        </fusioncharts>
-    </div>
-</div>
+</section>

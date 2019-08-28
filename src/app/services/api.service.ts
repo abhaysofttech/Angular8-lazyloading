@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
 import { ApiendpointService } from './apiendpoint.service';
+import { commonService } from './shared.service';
+import { isNullOrUndefined } from 'util';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -17,8 +19,38 @@ export class ApiService {
   apiURL: any;
   currentURL: any;
   //dataList = './assets/list.json';
-  dataList = 'http://10.107.168.23:8082/ZenForteWebServices/api/charts/genderChart/20521/PGM';
-  constructor(private httpPlugin: HttpClient, private apiendpoint: ApiendpointService) {
+  userData = {
+    username: '',
+    role: '',
+    staffNo: ''
+  }
+  constructor(private httpPlugin: HttpClient, private apiendpoint: ApiendpointService, private _data: commonService) {
+    debugger
+    this._data.currentData.subscribe(
+      currentData => {
+        if (currentData == '') {
+          let tempdata = [];
+          isNullOrUndefined(localStorage.getItem("ZenForteData")) ? tempdata = [] : tempdata = JSON.parse(localStorage.getItem("ZenForteData"));
+          //  localStorage.setItem("ZenForteData", JSON.stringify(this.loginData));
+
+          if (tempdata.length > 0) {
+            console.log(tempdata);
+
+            this.userData.username = tempdata[0].sessionBean.authenticationVO.staffName;
+            this.userData.role = tempdata[0].sessionBean.authenticationVO.role;
+            this.userData.staffNo = tempdata[0].sessionBean.authenticationVO.staffNo;
+            this._data.updateMessage(this.userData); // Shared Data in shared service
+
+            // this.ZenForteData = (tempdata).concat(this.loginData);
+            // localStorage.setItem("ZenForteData", JSON.stringify(this.loginData));
+          }
+          else {
+            console.log('array size exceeded...');
+          }
+        }
+
+      }
+    )
     this.apiURL = this.apiendpoint.API;
     this.currentURL = this.apiURL.baseURL
   }
@@ -63,7 +95,7 @@ export class ApiService {
       "/" + empRole, {});
 
     // Http get method for bar chart
-    let leadWiseResponse = this.httpPlugin.get(this.currentURL  + this.apiURL.pgmDistributionService + empNumber +
+    let leadWiseResponse = this.httpPlugin.get(this.currentURL + this.apiURL.pgmDistributionService + empNumber +
       "/" + empRole, {});
     // Http get method for overall associates chart
     let overAllAssociatesChartResponse = this.httpPlugin.get(this.currentURL + this.apiURL.overallAssociatesService +
@@ -71,7 +103,7 @@ export class ApiService {
 
     // return forkJoin([twentyFiveWindowResponse, dashboardResponse, genderChartResponse,
     //   barChartResponse, overAllAssociatesChartResponse])
-    return forkJoin([genderChartResponse,leadWiseResponse,overAllAssociatesChartResponse,twentyFiveWindowResponse]);
+    return forkJoin([genderChartResponse, leadWiseResponse, overAllAssociatesChartResponse, twentyFiveWindowResponse]);
 
   }
 
@@ -120,25 +152,25 @@ export class ApiService {
 
   login(userName: string, password: string): Observable<any> {
 
-  //  return new Promise((resolve, reject) => {
+    //  return new Promise((resolve, reject) => {
 
-      // Prepare body
-      let body = {
-        "strUsername": userName,
-        "strPassword": password
-      }
+    // Prepare body
+    let body = {
+      "strUsername": userName,
+      "strPassword": password
+    }
 
-      // Prepare headers
-      // let headers: {
-      //   "Content-Type": "application/json"
-      // }
+    // Prepare headers
+    // let headers: {
+    //   "Content-Type": "application/json"
+    // }
 
-      // Http post method 
-      // this.httpPlugin.post(this.url + this.loginServiceWithEncryptedToken, body, headers)
-      let loginData = this.httpPlugin.post(this.currentURL + this.apiURL.loginSerivce,body);
+    // Http post method 
+    // this.httpPlugin.post(this.url + this.loginServiceWithEncryptedToken, body, headers)
+    let loginData = this.httpPlugin.post(this.currentURL + this.apiURL.loginSerivce, body);
     //  this.httpPlugin.post(this.currentURL + this.apiURL.loginSerivce, body)
-       return loginData;
-   // });
+    return loginData;
+    // });
   }
 
 
