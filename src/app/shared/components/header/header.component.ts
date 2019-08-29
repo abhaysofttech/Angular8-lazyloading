@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { commonService } from 'src/app/services/shared.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  userData : any
+  constructor(private _data: commonService) { }
 
   ngOnInit() {
+    this._data.currentData.subscribe(
+      currentData => this.userData = currentData
+    )
   }
   collapse(){
     console.log('click');

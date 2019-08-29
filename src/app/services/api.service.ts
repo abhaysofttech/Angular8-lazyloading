@@ -22,10 +22,10 @@ export class ApiService {
   userData = {
     username: '',
     role: '',
-    staffNo: ''
+    staffNo: '',
+    roles:[]
   }
   constructor(private httpPlugin: HttpClient, private apiendpoint: ApiendpointService, private _data: commonService) {
-    debugger
     this._data.currentData.subscribe(
       currentData => {
         if (currentData == '') {
@@ -39,6 +39,7 @@ export class ApiService {
             this.userData.username = tempdata[0].sessionBean.authenticationVO.staffName;
             this.userData.role = tempdata[0].sessionBean.authenticationVO.role;
             this.userData.staffNo = tempdata[0].sessionBean.authenticationVO.staffNo;
+            this.userData.roles = tempdata[0].roles;
             this._data.updateMessage(this.userData); // Shared Data in shared service
 
             // this.ZenForteData = (tempdata).concat(this.loginData);
@@ -53,6 +54,7 @@ export class ApiService {
     )
     this.apiURL = this.apiendpoint.API;
     this.currentURL = this.apiURL.baseURL
+  //  this.currentURL = this.apiURL.localURL
   }
 
   // getDashboardDataForPGM(data){
@@ -149,7 +151,34 @@ export class ApiService {
       totalOffShoreLocationWiseCount, totalVisaCount])
   }
 
+ /**
+   * Below Post method used to get Demand List data
+   */
+  demandList(authToken: string, empNumber: string, empRole: string): Promise<any> {
+    return new Promise((resolve, reject) => {
 
+   
+      // Prepare body
+      let body = {
+
+      };
+
+      // Http post method
+      this.httpPlugin.post(this.currentURL + this.apiURL.demandListService + empNumber + "&role=" + empRole, body, {})
+      .subscribe( 
+        response => {
+          console.log(response) 
+          resolve(response)
+  
+        }, error => {
+          console.log(error)
+          reject(error) 
+          
+
+      }
+    ); 
+    });
+  }
   login(userName: string, password: string): Observable<any> {
 
     //  return new Promise((resolve, reject) => {

@@ -33,6 +33,8 @@ import { FormsModule } from '@angular/forms';
 // import{Ng2TableModule } from 'ng2-expanding-table'
 import { RowContentComponent } from './testdata/testdata-content.component';
 import { FilterPipe} from './filter.pipe';
+import { LoadingSpinnerComponent } from 'src/app/shared/components/loading-spinner/loading-spinner.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -52,13 +54,14 @@ import { FilterPipe} from './filter.pipe';
         TestComponent,
         TestdataComponent,
         RowContentComponent,
-        FilterPipe
+        FilterPipe,
+       // LoadingSpinnerComponent
         
         
     ],
     imports: [
         CommonModule,Ng2TableModule,FormsModule,
-        UsersRoutingModule,
+        UsersRoutingModule,SharedModule
     ],
     exports: [
         UsersComponent,

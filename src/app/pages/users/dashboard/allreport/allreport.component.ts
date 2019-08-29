@@ -245,6 +245,7 @@ export class AllreportComponent implements OnInit {
 
 
         // Plot Leadwise Distribution graph
+        debugger
         this.leadWiseDistributionDataSource.dataset = [];
         var graphdata = leadwiseDistributionData.barChartData;
 
@@ -398,6 +399,7 @@ export class AllreportComponent implements OnInit {
       }
       dataByBU[graphdata[i][1]][graphdata[i][0]] = graphdata[i][2];
     }
+    debugger;
     this.dhDataSource.categories[0].category = [];
     var categoryWiseData = [];
     var categories = [

@@ -9,6 +9,8 @@ import { DemandAssignmentComponent } from './demand-assignment/demand-assignment
 import { RwfDashboardComponent } from './rwf-dashboard/rwf-dashboard.component';
 import { RwfTransactionComponent } from './rwf-transaction/rwf-transaction.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { LoadingSpinnerComponent } from 'src/app/shared/components/loading-spinner/loading-spinner.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -18,10 +20,12 @@ import { AgGridModule } from 'ag-grid-angular';
         RwfManagementComponent,
         DemandAssignmentComponent,
         RwfDashboardComponent,
-        RwfTransactionComponent
+        RwfTransactionComponent,
+        // LoadingSpinnerComponent
     ],
     imports: [
         RwfRoutingModule,CommonModule,
+        SharedModule,
         AgGridModule.withComponents([RwfComponent])
     ],
     exports: []

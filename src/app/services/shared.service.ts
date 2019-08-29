@@ -11,7 +11,6 @@ export class commonService {
     constructor() { }
 
     updateMessage(item: any) {
-        debugger;
         this.data.next(item);
     }
 

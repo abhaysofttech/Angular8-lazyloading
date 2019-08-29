@@ -11,7 +11,7 @@ import { TwentyFiveWindowRatingWithWeightageComponent } from './shared/component
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/user/dashboard/details',
+    redirectTo:'/login',
     pathMatch:'full'
   },
   {

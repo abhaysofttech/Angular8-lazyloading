@@ -387,3 +387,8 @@ input[type="checkbox"]:checked + label:before {
 .align-center{
     text-align: center;
 }
+.ph-item{
+    border: 0 !important;
+    margin: 12px !important;
+    padding: 0 !important
+}

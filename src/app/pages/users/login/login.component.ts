@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   userData = {
     username: '',
     role: '',
-    staffNo: ''
+    staffNo: '',
+    roles:[]
   }
 
   ZenForteData: any = [];
@@ -34,10 +35,12 @@ export class LoginComponent implements OnInit {
     // this.router.navigate(['/user/dashboard/details']);
     this.api.login(this.loginData.username, this.loginData.password)
       .subscribe(response => {
+        debugger
         console.log(response);
         this.userData.username = response.sessionBean.authenticationVO.staffName;
         this.userData.role = response.sessionBean.authenticationVO.role;
         this.userData.staffNo = response.sessionBean.authenticationVO.staffNo;
+        this.userData.roles = response.roles;
         this._data.updateMessage(this.userData); // Shared Data in shared service
         debugger;
         this.ZenForteData.push(response)

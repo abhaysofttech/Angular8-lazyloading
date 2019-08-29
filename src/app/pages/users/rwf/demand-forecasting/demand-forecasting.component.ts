@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+import { commonService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-demand-forecasting',
@@ -8,85 +10,89 @@ import { Component, OnInit } from '@angular/core';
 export class DemandForecastingComponent implements OnInit {
   private columnDefs;
   private rowData;
-  constructor() {
+  public empRole: string;
+  public empNumber: string;
+  public listData: any;
+  userData: any;
+  constructor(private api: ApiService, private _data: commonService) {
     this.columnDefs = [
       {
         headerName: "Demand ID",
-        field: "demand_id",
+        field: "demfcastid",
         width: 100,
         cellRenderer: "agGroupCellRenderer"
       },
       {
         headerName: "Opportunity Id",
-        field: "opportunity_id",
+        field: "opportunityidsfdc",
         width: 100
       },
       {
         headerName: "Opportunity Desc",
-        field: "opportunity_desc",
+        field: "opportunitydesc",
         width: 100
       },
       {
         headerName: "Client Manager",
-        field: "client_manager",
+        field: "clientmanager",
         width: 200
       }, {
         headerName: "Customer Dept/Program",
-        field: "customer_dept",
+        field: "customerdept",
         width: 100
       }, {
         headerName: "Assigned To",
-        field: "assigned_to",
+        field: "assignee",
         width: 200
       },
       {
         headerName: "Created By(EM)",
-        field: "created_by",
+        field: "emstaffid",
         width: 100
       },
       {
         headerName: "Created On",
-        field: "created_on",
+        field: "creationdate",
         width: 100
       },
       {
         headerName: "Offshore Delivery Center Head",
-        field: "offshore_delivery_CH",
+        field: "odch",
         width: 100
       },
       {
         headerName: "Engagement Manager",
-        field: "eng_manager",
+        field: "emstaffid",
         width: 100
       },
       {
         headerName: "Onsite Delivery Head",
-        field: "onsite_delivery_head",
+        field: "odmstaffid",
         width: 100
       },
       {
         headerName: "Delivery Head",
-        field: "delivery_head",
+        field: "dhstaffid",
         width: 100
       },
       {
         headerName: "Program Manager",
-        field: "program_manager",
+        field: "pgmstaffid",
         width: 100
       },
       {
         headerName: "Skill Family",
-        field: "skill_family",
+        field: "skillfamily",
         width: 100
       },
       {
         headerName: "Primary Skill",
-        field: "primary_skill",
+        field: "primaryskillset",
         width: 100
       },
       {
         headerName: "Secondary Skill",
-        field: "secondary_skill",
+        field: "secondaryskillset",
         width: 100
       },
       {
@@ -96,22 +102,22 @@ export class DemandForecastingComponent implements OnInit {
       },
       {
         headerName: "Date Demand Received",
-        field: "date_demand_received",
+        field: "demandreceiveddate",
         width: 100
       },
       {
         headerName: "Ramp Down(Yes/No)",
-        field: "ramp_down",
+        field: "rampdown",
         width: 100
       },
       {
         headerName: "Demand Status",
-        field: "demand_status",
+        field: "demandstatus",
         width: 100
       },
       {
         headerName: "Remark",
-        field: "remark",
+        field: "remarks",
         width: 100
       },
       {
@@ -121,32 +127,32 @@ export class DemandForecastingComponent implements OnInit {
       },
       {
         headerName: "No of Position",
-        field: "no_of_position",
+        field: "numberofpositions",
         width: 100
       },
       {
         headerName: "Total Billing loss(in $)",
-        field: "total_billing_loss_$",
+        field: "billing_loss_days",
         width: 100
       },
       {
         headerName: "Total Billing loss(in Days)",
-        field: "total_billing_loss_days",
+        field: "billing_loss_days",
         width: 100
       },
       {
         headerName: "Billing Rate",
-        field: "billing_rate",
+        field: "billingrate",
         width: 100
       },
       {
         headerName: "Fulfilled Status",
-        field: "fulfilled_status",
+        field: "numberofpositionsfilled",
         width: 100
       },
       {
         headerName: "Billing Start Date",
-        field: "billing_start_date",
+        field: "billingstartdate",
         width: 100
       }
     ];
@@ -180,7 +186,7 @@ export class DemandForecastingComponent implements OnInit {
         "billing_rate": "85",
         "fulfilled_status": "100.00",
         "Billing Start Date": "2018-12-31",
-        
+
       },
       {
         "demand_id": "17",
@@ -211,7 +217,7 @@ export class DemandForecastingComponent implements OnInit {
         "billing_rate": "85",
         "fulfilled_status": "100.00",
         "Billing Start Date": "2018-12-31",
-        
+
       },
       {
         "demand_id": "17",
@@ -242,7 +248,7 @@ export class DemandForecastingComponent implements OnInit {
         "billing_rate": "85",
         "fulfilled_status": "100.00",
         "Billing Start Date": "2018-12-31",
-        
+
       },
       {
         "demand_id": "17",
@@ -273,7 +279,7 @@ export class DemandForecastingComponent implements OnInit {
         "billing_rate": "85",
         "fulfilled_status": "100.00",
         "Billing Start Date": "2018-12-31",
-        
+
       },
       {
         "demand_id": "17",
@@ -304,13 +310,42 @@ export class DemandForecastingComponent implements OnInit {
         "billing_rate": "85",
         "fulfilled_status": "100.00",
         "Billing Start Date": "2018-12-31",
-        
+
       }
     ]
 
   }
 
   ngOnInit() {
+    this._data.currentData.subscribe(
+      currentData => {
+        this.userData = currentData
+      }
+    )
+    // Api call to get Demand list data
+    this.getDemandListData();
   }
 
+
+
+  getDemandListData() {
+    this.empRole = this.userData.role;
+    this.empNumber = this.userData.staffNo;
+    this.api.demandList('',  this.empNumber,this.empRole)
+      .then((response: any) => {
+        console.log(response);
+        // this.demandListResponse = JSON.parse(response.data);
+        // console.log('Demand List Response -> ', this.demandListResponse)
+
+         this.listData = response.matrixEmpDetails;
+
+      })
+      .catch((error) => {
+        console.log(error)
+        // Dismiss the loader
+        //  this.dismissLoader();
+        // Show alert with error message
+        //  this.showAlert(Constants.ERROR_TITLE, Constants.ERROR_MESSAGE);
+      })
+  }
 }

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 import { TwentyFiveWindowRatingWithWeightageComponent } from './shared/components/twenty-five-window-rating-with-weightage/twenty-five-window-rating-with-weightage.component';
+import { SharedModule } from './shared/shared.module';
 
 //import { NbThemeModule } from '@nebular/theme';
 
@@ -19,7 +20,7 @@ import { TwentyFiveWindowRatingWithWeightageComponent } from './shared/component
     //  HeaderComponent,
     LoginComponent,
     AuthComponent,
-    LoadingSpinnerComponent,
+  //  LoadingSpinnerComponent,
 
   ],
   imports: [
@@ -27,6 +28,7 @@ import { TwentyFiveWindowRatingWithWeightageComponent } from './shared/component
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    SharedModule
     //NbThemeModule.forRoot(),
     //UsersModule
   ],

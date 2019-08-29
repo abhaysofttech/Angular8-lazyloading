@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiendpointService {
     public API: any = {
-        localURL: "http://10.107.168.23:8082/ZenForteWebServices/api/",
+        localURL: "http://10.76.176.34:8082/ZenForteWebServices/api/",
 
         baseURL: "/ZenForteWebServices_PreRelease/api/",
         // Login with Token
