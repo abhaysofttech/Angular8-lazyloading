@@ -35,6 +35,7 @@ import { RowContentComponent } from './testdata/testdata-content.component';
 import { FilterPipe} from './filter.pipe';
 import { LoadingSpinnerComponent } from 'src/app/shared/components/loading-spinner/loading-spinner.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { SearchFilterPipe } from './rwf/demand-forecasting/filter.pipe';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
         TestdataComponent,
         RowContentComponent,
         FilterPipe,
+        //SearchFilterPipe
        // LoadingSpinnerComponent
         
         

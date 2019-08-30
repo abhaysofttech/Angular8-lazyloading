@@ -9,6 +9,7 @@ import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as TimeSeries from 'fusioncharts/fusioncharts.timeseries';
 import { TwentyFiveWindowRatingWithWeightageComponent } from 'src/app/shared/components/twenty-five-window-rating-with-weightage/twenty-five-window-rating-with-weightage.component';
 import { LoadingSpinnerComponent } from 'src/app/shared/components/loading-spinner/loading-spinner.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 FusionChartsModule.fcRoot(FusionCharts, Charts, TimeSeries);
 
 
@@ -22,7 +23,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, TimeSeries);
     imports:[
         DashboardRoutingModule,
         FusionChartsModule,
-        CommonModule
+        CommonModule,
+        SharedModule
     ],
     exports:[TwentyFiveWindowRatingWithWeightageComponent]
 })

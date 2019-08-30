@@ -9,110 +9,77 @@
         </div>
      -->
 
-     <div class="row no-margin justify-content-md-center">
-      <div class="col-12 ">
-              <div class="form-group">
-                      <div class="col-md-6" >
-                        <!-- <input type="text" [(ngModel)]="searchText" 
-                               class="form-control" placeholder="Search By Category" /> -->
-                      </div>
-                    </div>
-          <div class="card" style="overflow: auto;">
-              <div class="row no-margin tableGridHeader">
-                  <div class="col-121 zen-row-header ">
-                      <div class="zen-cell" *ngFor="let data of columnDefs;let i = index" [ngStyle]="{'width':data.width+'px'}" style="left: 0;">{{data.headerName}}</div>
-                  </div>
-              </div>
-              <app-loading-spinner [loadingType]="'bar'" *ngIf="!listData">
-                </app-loading-spinner>
-              <ng-container *ngIf="listData">
-                <div class="tableGridBody">
-                   
-                <div class="row no-margin" *ngFor="let data of listData" >
-                    <div class="col-12 zen-row firstLevel">
-                        <div class="zen-cell" *ngFor="let col of columnDefs;" [ngStyle]="{'width':col.width+'px'}" style="left: 0;">
-                            <!-- <i class="more-less glyphicon glyphicon-plus fa"
-                                [ngClass]="{'fa-plus': data.children, 'fa-minus': data.active }" style="color:#8e8e8e"
-                                (click)="showMinorData(i)"></i> -->
-                            {{ data[col.field]}}
-                        </div>
-                        <!-- <div class="zen-cell" style="width: 100px; left: 0;">{{data.opportunity_id}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.opportunity_desc}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.client_manager}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.customer_dept}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.assigned_to}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.created_by}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.created_on}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.offshore_delivery_CH}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.eng_manager}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.delivery_head}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.delivery_head}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.delivery_head}}</div>
-                        <div class="zen-cell" style="width: 100px; left: 0;">{{data.delivery_head}}</div> -->
-                    </div>
-                    <!-- <ng-container *ngIf="data.active">
-                        <div class="row no-margin" *ngFor="let subData of data.children ;let j=index"
-                            style="background: #ccc">
-                            <div class="col-12 zen-row ">
-                                <div class="zen-cell secondLevel" style="width: 100px; left: 0;">
-                                    <i class="more-less glyphicon glyphicon-plus fa"
-                                        [ngClass]="{'fa-plus': subData.children, 'fa-minus': subData.active }"
-                                        style="color:#8e8e8e" (click)="showSubMinorData(i,j)"></i>
-                                    {{subData.demand_id}}
-                                </div>
+<div class="row no-margin justify-content-md-center">
+    <!-- <div class="card" style="width: 18rem;position: absolute;z-index: 9;right: 57px;">
+        <ul class="list-group list-group-flush">
+          <li class="column-filter-item" *ngFor="let data of columnDefs;let i = index;">
+              <input type="checkbox" id="rdb{{i}}" name="radio-group"> <label for="rdb{{i}}"></label>
+              <span>{{data.headerName}}</span></li>
+        </ul>
+      </div> -->
+  <div class="col-12 ">
+    <div class="form-group row" *ngIf="listData" style="margin: 0px; margin-bottom:10px; ">
+        <div class=" col-6 no-padding">
+          <span style="vertical-align: middle;">Total Record: - {{listData.length}}</span>
+        </div>
+        <div class="col-6">
+        <div class="input-group no-padding" >
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Search by text</span>
+            </div>
+              <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search by text" aria-describedby="basic-addon1"/>
+          </div>
+        </div>
+    </div>
+  
+    <div class="card" style="overflow: auto;">
+      <div class="row no-margin tableGridHeader">
+        <div class="col-121 zen-row-header ">
+          <div class="zen-cell" *ngFor="let data of columnDefs;let i = index;" [ngStyle]="{'width':data.width+'px'}"
+            style="left: 0;">{{data.headerName}}</div>
+        </div>
+      </div>
+      <app-loading-spinner [loadingType]="'bar'" *ngIf="!listData">
+      </app-loading-spinner>
+      
+      <ng-container *ngIf="listData">
+        <div class="tableGridBody">
 
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.opportunity_id}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.opportunity_desc}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.client_manager}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.customer_dept}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.assigned_to}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.created_by}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.created_on}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.offshore_delivery_CH}}
+          <div class="row no-margin" *ngFor="let data of listData | searchFilter :  columnDefs:searchText;let i=index">
+              <div *ngIf="!data" class="noMatchFound">"No record matches"</div>
+            <div class="col-12 zen-row firstLevel" *ngIf="data">
+              <div class="zen-cell" *ngFor="let col of columnDefs; let colIndex = index;first as isFirst" [ngStyle]="{'width':col.width+'px'}"
+                style="left: 0;"  [class.first]="isFirst">
+                <i class="more-less glyphicon glyphicon-plus fa" *ngIf="colIndex == 0"
+                                [ngClass]="{'fa-plus': data.children, 'fa-minus': data.active }" 
+                                (click)="showMinorData(i)"></i>
+                <span data-toggle="tooltip" title={{data[col.field]}}>{{ data[col.field]}}</span>
+              </div>
+             
+            </div>
+             <ng-container *ngIf="data.active">
+                        <div class="row no-margin" *ngFor="let subData of data.children ;let j=index"
+                            style="background: rgba(50, 185, 226, 0.3215686274509804)">
+                            <div class="col-12 zen-row ">
+                                <div class="zen-cell secondLevel" *ngFor="let col of columnDefs; let colIndex2 = index;first as isFirst" [ngStyle]="{'width':col.width+'px'}"
+                                style="left: 0;"  [class.first]="isFirst">
+                                    <i class="more-less glyphicon glyphicon-plus fa"  *ngIf="colIndex2 == 0"
+                                        [ngClass]="{'fa-plus': subData.children, 'fa-minus': subData.active }"
+                                         (click)="showSubMinorData(i,j)"></i>
+                                    <span data-toggle="tooltip" title={{subData[[col.field]]}}>{{subData[[col.field]]}}</span>
                                 </div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.eng_manager}}</div>
-                             
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.delivery_head}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.delivery_head}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.delivery_head}}</div>
-                                <div class="zen-cell" style="width: 100px; left: 0;">{{subData.delivery_head}}</div>
                             </div>
 
-                            <ng-container *ngIf="subData.active">
+                           <ng-container *ngIf="subData.active">
                                 <div class="row no-margin" *ngFor="let record of subData.children"
-                                    style="background: #dee2e6">
+                                    style="background: rgba(197, 206, 224, 0.5607843137254902);     color: #595454;">
                                     <div class="col-12 zen-row ">
-                                        <div class="zen-cell thirdLevel" style="width: 100px; left: 0;">
-                                            <i class="more-less glyphicon glyphicon-plus fa"
+                                        <div class="zen-cell thirdLevel"  *ngFor="let col of columnDefs; let colIndex3 = index;" [ngStyle]="{'width':col.width+'px'}"
+                                        style="left: 0;">
+                                            <i class="more-less glyphicon glyphicon-plus fa"  *ngIf="colIndex3 == 0"
                                                 [ngClass]="{'fa-plus': record.children, 'fa-minus': record.active }"
-                                                style="color:#8e8e8e"></i>
-                                            {{record.demand_id}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.opportunity_id}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.opportunity_desc}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.client_manager}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.customer_dept}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.assigned_to}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.created_by}}</div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.created_on}}</div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">
-                                            {{record.offshore_delivery_CH}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.eng_manager}}
-                                        </div>
-                                     
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.delivery_head}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.delivery_head}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.delivery_head}}
-                                        </div>
-                                        <div class="zen-cell" style="width: 100px; left: 0;">{{record.delivery_head}}
+                                                ></i>
+                                            <span>{{record[[col.field]]}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -120,12 +87,12 @@
                             </ng-container>
                         </div>
 
-                    </ng-container> -->
+                    </ng-container> 
 
-                </div>
-            </div>
-            </ng-container>
-  
           </div>
-      </div>
+        </div>
+      </ng-container>
+
+    </div>
   </div>
+</div>

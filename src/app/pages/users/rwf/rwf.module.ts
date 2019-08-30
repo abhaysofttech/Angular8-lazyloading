@@ -11,6 +11,8 @@ import { RwfTransactionComponent } from './rwf-transaction/rwf-transaction.compo
 import { AgGridModule } from 'ag-grid-angular';
 import { LoadingSpinnerComponent } from 'src/app/shared/components/loading-spinner/loading-spinner.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
+import { SearchFilterPipe } from './demand-forecasting/filter.pipe';
 
 @NgModule({
     declarations: [
@@ -21,10 +23,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
         DemandAssignmentComponent,
         RwfDashboardComponent,
         RwfTransactionComponent,
+        SearchFilterPipe
         // LoadingSpinnerComponent
     ],
     imports: [
         RwfRoutingModule,CommonModule,
+        FormsModule,
         SharedModule,
         AgGridModule.withComponents([RwfComponent])
     ],

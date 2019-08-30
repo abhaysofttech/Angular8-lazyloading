@@ -317,16 +317,16 @@ th{
 input[type="checkbox"] { display: none; }
 
 input[type="checkbox"] + label {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 20px;
-  font: 14px/20px 'Open Sans', Arial, sans-serif;
-  color: #ddd;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+    /* display: block; */
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    font: 14px/20px 'Open Sans', Arial, sans-serif;
+    color: #ddd;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 input[type="checkbox"] + label:last-child { margin-bottom: 0; }

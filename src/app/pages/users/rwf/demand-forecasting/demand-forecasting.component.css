@@ -62,3 +62,38 @@
 .thirdLevel{
     padding-left:30px;
 }
+
+.noMatchFound{
+  width: 100%;
+  border: 1px solid #d3d2d2;
+  text-align: center;
+  background: #e7e9ea;
+  line-height: 36px;
+  margin-top: 15px;
+}
+
+.tableGridBody>*:nth-child(odd) {
+  background: #f8f6f6;
+}
+.more-less{
+  color: #0190bb;
+    cursor: pointer;
+}
+.first i {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.first span {
+  padding-left: 20px;
+  position: relative;
+  left: 13px;
+}
+
+/* css for filter box */
+.column-filter-item {
+  padding: 3px 10px;
+  font-size: .8rem;
+  list-style: none;
+  border-bottom: 1px solid #e7e5e5;
+}
